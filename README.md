@@ -1,6 +1,9 @@
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Prerequisites](#Prerequisites)
+- [Introduction](#Introduction)
+- [Purpose](#Purpose)
+- [Steps](#Steps)
 
 ## Prerequisites
 
