@@ -1,21 +1,21 @@
 variable aws_access_key {
   type        = string
-  default     = ""
+  description     = "Enter your AWS acccess key"
 }
 
 variable aws_secret_key {
   type        = string
-  default     = ""
+  description     = "Enter your AWS Secret key"
 }
 
 variable "region" {
   type        = string
-  default     = ""
+  description     = "Enter region (example: eu-central-1)"
 }
 
 variable "vpc_id" {
   type        = string
-  default     = ""
+  description     = "Enter your VPC id"
 }
 
 variable "allow_ports" {
