@@ -25,7 +25,8 @@ resource "aws_security_group" "security_group" {
    name = "WebServer Security Group - Eriks"
    vpc_id = var.vpc_id
    description = "Security group for main task"
- 
+
+   # Set inbound rules, open specific ports
    dynamic "ingress" {
     for_each = var.allow_ports
     content {
@@ -35,7 +36,8 @@ resource "aws_security_group" "security_group" {
         cidr_blocks = ["0.0.0.0/0"]
     }
    }
- 
+
+   # Set outbound rules, allow all tcp connections
    egress {
      from_port = 0
      to_port = 65535
@@ -58,13 +60,10 @@ resource "aws_key_pair" "generated_key" {
   public_key = tls_private_key.webserver_key.public_key_openssh
 }
 
-# Retrieve the created key pair information
-data "aws_key_pair" "retrieved_key" {
-  key_name = aws_key_pair.generated_key.key_name
-}
-
 # Create EC2 instance
 resource "aws_instance" "ec2_instance" {
+    depends_on = [aws_key_pair.generated_key]
+
     ami = data.aws_ami.latest_ubuntu.id
     instance_type = var.instance_type
     key_name   = var.key_pair_name
