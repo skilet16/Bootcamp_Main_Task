@@ -4,8 +4,8 @@
 - [Introduction](#Introduction)
 - [Purpose](#Purpose)
 - [Steps](#Steps)
-- [Clean up](#Clean up)
 - [Explanation](#Explanation)
+- [Cleanup](#Cleanup)
   
 ## Prerequisites
 
@@ -100,7 +100,7 @@ Git Actions responsible for uploading newly modified index.html to the EC2 insta
 
 Inside of this code, we have secrets variables that should be defined in github repository in order to connect to EC2 instance and make some changes
 
-## Clean up
+## Cleanup
 In order to clean everything up, go to **/terraform** and execute following command:
 ```
 terraform destroy
