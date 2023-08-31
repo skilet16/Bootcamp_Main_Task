@@ -4,8 +4,9 @@
 - [Introduction](#Introduction)
 - [Purpose](#Purpose)
 - [Steps](#Steps)
+- [Clean up](#Clean up)
 - [Explanation](#Explanation)
-
+  
 ## Prerequisites
 
 - Terraform: [Installation Guide](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -98,3 +99,10 @@ All the terraform files located in **/terraform** directory:
 Git Actions responsible for uploading newly modified index.html to the EC2 instance. It acts on any push event and uploads index.html if it is modified. All the logic is contained in folder .git/workflows/deploy_index_to_ec2.yml
 
 Inside of this code, we have secrets variables that should be defined in github repository in order to connect to EC2 instance and make some changes
+
+## Clean up
+In order to clean everything up, go to **/terraform** and execute following command:
+```
+terraform destroy
+```
+Then it will prompt a message, and you should enter **yes**
